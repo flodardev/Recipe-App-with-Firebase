@@ -8,8 +8,6 @@ const MyVerticallyCenteredModal = React.memo((props) => {
     const [ , , modal, setModal ] = useContext(RecipeContext)
     const recipe = modal.selectedRecipe.recipe
 
-    console.log("Modal rendered")
-
     const onHide = () => {
         setModal(prevState => {
             return ({
@@ -21,13 +19,12 @@ const MyVerticallyCenteredModal = React.memo((props) => {
 
     return (
         <Modal
-        {...props}
-        onHide={onHide}
-        show={modal.open}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
+            onHide={onHide}
+            show={modal.open}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {recipe.label}

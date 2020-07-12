@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { RecipeContext } from "../context/RecipeContext"
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 
 function RecipeCard({ image, label, recipe}) {
 
@@ -11,13 +11,19 @@ function RecipeCard({ image, label, recipe}) {
     }
 
     return (
-        <Card className="rounded" >
-            <Card.Img variant="top" src={image} />
+        <Card className="rounded shadow" >
+            <Card.Img variant="top" src={image} alt={label} />
             <Card.Body>
-                <Card.Title>{label}</Card.Title>
-                <Button variant="info" onClick={handleClick}>
-                    Open
-                </Button>
+                <Row>
+                    <Col xs={7}>
+                        <Card.Title>{label}</Card.Title>
+                    </Col>
+                    <Col >
+                        <Button className="ml-auto" variant="info" onClick={handleClick}>
+                            Open
+                        </Button>
+                    </Col>
+                </Row>
             </Card.Body>
         </Card>
     )

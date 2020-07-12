@@ -50,13 +50,20 @@ function App() {
   return (
       <div className="App">
         <header>
-          <h1 className="mt-2">Search for Recipes</h1>
+          <h1 className="mt-2 text-white">Recipes <span><small>by flodardev</small></span></h1>
         </header>
         <main className="container">
         <Form inline onSubmit={handleSubmit} className="mb-1">
           <div className="search-form">
-            <Form.Control onChange={handleChange} value={search} type="text" className="mr-1" placeholder="Search"></Form.Control>
-            <Button type="submit" className="my-1" variant="info">
+            <Form.Label for="searchBar" srOnly>
+              Search:
+            </Form.Label>
+            <Form.Control
+              className="mb-2 mr-sm-2"
+              id="searchBar"
+              onChange={handleChange}
+            />      
+            <Button type="submit" className="mb-2" variant="info">
               Search
             </Button>
           </div>
